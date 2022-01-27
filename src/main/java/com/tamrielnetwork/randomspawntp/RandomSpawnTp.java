@@ -33,6 +33,8 @@ public final class RandomSpawnTp extends JavaPlugin {
 
         Objects.requireNonNull(getCommand("randomspawntp")).setExecutor(new RandomSpawnTpCmd());
 
+        saveDefaultConfig();
+
         messages = new Messages();
 
         Bukkit.getLogger().info("RandomSpawnTp v" + this.getDescription().getVersion() + " enabled");

@@ -21,6 +21,7 @@ import com.tamrielnetwork.randomspawntp.RandomSpawnTp;
 import com.tamrielnetwork.randomspawntp.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
+import org.bukkit.WorldCreator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -62,8 +63,9 @@ public class RandomSpawnTpCmd implements CommandExecutor {
         Random randomNumber = new Random();
         String world = keys.get(randomNumber.nextInt(0,keys.size()));
 
-        if (main.getServer().getWorld(world) != null) {
-            ((Player) sender).teleport(Objects.requireNonNull(main.getServer().getWorld(world)).getSpawnLocation());
+        if (Bukkit.getWorld(world) != null) {
+            Bukkit.createWorld(new WorldCreator(world));
+            ((Player) sender).teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
         } else {
             Utils.sendMessage(sender, "world-nonexistent");
         }
