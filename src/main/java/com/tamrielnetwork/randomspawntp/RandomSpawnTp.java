@@ -31,7 +31,7 @@ public final class RandomSpawnTp extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        Objects.requireNonNull(getCommand("spec")).setExecutor(new RandomSpawnTpCmd());
+        Objects.requireNonNull(getCommand("randomspawntp")).setExecutor(new RandomSpawnTpCmd());
 
         messages = new Messages();
 
