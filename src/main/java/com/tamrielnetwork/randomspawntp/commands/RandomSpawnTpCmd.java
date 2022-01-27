@@ -60,9 +60,9 @@ public class RandomSpawnTpCmd implements CommandExecutor {
         // Teleport player to random world
         List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getConfigurationSection("worlds")).getKeys(false));
         Random randomNumber = new Random();
-        World world = Bukkit.getWorld(keys.get(randomNumber.nextInt(0,keys.size())));
-        if (main.getServer().getWorld(String.valueOf(world)) != null) {
-            ((Player) sender).teleport(Objects.requireNonNull(world).getSpawnLocation());
+        String world = keys.get(randomNumber.nextInt(0,keys.size()));
+        if (main.getServer().getWorld(world) != null) {
+            ((Player) sender).teleport(Objects.requireNonNull(main.getServer().getWorld(world)).getSpawnLocation());
         }
     }
 }
