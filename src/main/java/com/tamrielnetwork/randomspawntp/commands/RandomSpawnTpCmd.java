@@ -53,16 +53,18 @@ public class RandomSpawnTpCmd implements CommandExecutor {
             return;
         }
         // Check permissions
-        if (!sender.hasPermission("specplayer.spectate")) {
+        if (!sender.hasPermission("randomspawntp.teleport")) {
             Utils.sendMessage(sender, "no-perms");
             return;
         }
         // Teleport player to random world
-        List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getConfigurationSection("worlds")).getKeys(false));
+        List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
         Random randomNumber = new Random();
         String world = keys.get(randomNumber.nextInt(0,keys.size()));
+        /*
         if (main.getServer().getWorld(world) != null) {
             ((Player) sender).teleport(Objects.requireNonNull(main.getServer().getWorld(world)).getSpawnLocation());
         }
+         */
     }
 }
