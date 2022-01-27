@@ -13,3 +13,6 @@ commands:
     randomspawntp.teleport:
       description: "Permission to teleport"
       default: op
+    randomspawntp.cooldown.bypass:
+      description: "Permission to bypass teleport cooldown"
+      default: op

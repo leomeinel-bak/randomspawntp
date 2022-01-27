@@ -70,6 +70,7 @@ This plugin is perfect for any server wanting their players to teleport to rando
 
 * Teleport players to a random world spawn
 * Configure a list of worlds to be included
+* Configure a cool-down for the teleport command to be executed
 
 ### Built With
 
