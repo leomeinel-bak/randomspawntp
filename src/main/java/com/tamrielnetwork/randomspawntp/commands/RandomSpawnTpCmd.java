@@ -61,10 +61,12 @@ public class RandomSpawnTpCmd implements CommandExecutor {
         List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
         Random randomNumber = new Random();
         String world = keys.get(randomNumber.nextInt(0,keys.size()));
-        /*
+
         if (main.getServer().getWorld(world) != null) {
             ((Player) sender).teleport(Objects.requireNonNull(main.getServer().getWorld(world)).getSpawnLocation());
+        } else {
+            Utils.sendMessage(sender, "world-nonexistent");
         }
-         */
+
     }
 }

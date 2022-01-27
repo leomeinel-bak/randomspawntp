@@ -125,6 +125,7 @@ worlds:
 ```
 player-only: "&cThis command can only be executed by players!"
 invalid-option: "&cInvalid option!"
+world-nonexistent: "&cInvalid world provided in config.yml"
 no-perms: "&7You don't have enough permissions!"
 ```
 
