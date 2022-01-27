@@ -94,31 +94,13 @@ To get the plugin running on your server follow these simple steps.
 
 ```
 worlds:
-  - 'world_the_end_0'
-  - 'world_the_end_1'
-  - 'world_the_end_2'
-  - 'world_the_end_3'
-  - 'world_the_end_4'
-  - 'world_the_end_5'
-  - 'world_the_end_6'
-  - 'world_the_end_7'
-  - 'world_the_end_8'
-  - 'world_the_end_9'
-  - 'world_the_end_10'
-  - 'world_the_end_11'
-  - 'world_the_end_12'
-  - 'world_the_end_13'
-  - 'world_the_end_14'
-  - 'world_the_end_15'
-  - 'world_the_end_16'
-  - 'world_the_end_17'
-  - 'world_the_end_18'
-  - 'world_the_end_19'
-  - 'world_the_end_20'
-  - 'world_the_end_21'
-  - 'world_the_end_22'
-  - 'world_the_end_23'
-  - 'world_the_end_24'
+  - world_example_0
+  - world_example_1
+# Command cool-down
+cooldown:
+  enabled: true
+  # time in ms
+  time: 300000
 ```
 
 ### Configuration - messages.yml
@@ -128,6 +110,7 @@ player-only: "&cThis command can only be executed by players!"
 invalid-option: "&cInvalid option!"
 world-nonexistent: "&cInvalid world provided in config.yml"
 no-perms: "&7You don't have enough permissions!"
+cooldown-active: "&7You can't use that command for another &b%time-left% &7seconds!"
 ```
 
 <!-- ROADMAP -->
