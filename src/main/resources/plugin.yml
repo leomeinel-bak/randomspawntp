@@ -1,0 +1,15 @@
+name: RandomSpawnTp
+version: @version@
+main: com.tamrielnetwork.randomspawntp.RandomSpawnTp
+api-version: 1.17
+authors: [ TamrielNetwork ]
+website: https://tamriel.site
+description: Teleports you to a random world spawn.
+commands:
+  randomspawntp:
+    description: "Main command"
+    usage: "/randomspawntp"
+  permissions:
+    randomspawntp.teleport:
+      description: "Permission to teleport"
+      default: op
