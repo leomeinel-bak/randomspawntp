@@ -30,56 +30,56 @@ import java.util.*;
 
 public class RandomSpawnTpCmd implements CommandExecutor {
 
-    private final RandomSpawnTp main = JavaPlugin.getPlugin(RandomSpawnTp.class);
+	private final RandomSpawnTp main = JavaPlugin.getPlugin(RandomSpawnTp.class);
 
-    private final HashMap<UUID, Long> cooldown = new HashMap<>();
+	private final HashMap<UUID, Long> cooldown = new HashMap<>();
 
-    @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        // Check args length
-        if (args.length == 0) {
-            executeTeleport(sender);
-        } else {
-            Utils.sendMessage(sender, "invalid-option");
-        }
+	@Override
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+		// Check args length
+		if (args.length == 0) {
+			executeTeleport(sender);
+		} else {
+			Utils.sendMessage(sender, "invalid-option");
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    private void executeTeleport(CommandSender sender) {
-        // Check if command sender is a player
-        if (!(sender instanceof Player)) {
-            Utils.sendMessage(sender, "player-only");
-            return;
-        }
-        // Check permissions
-        if (!sender.hasPermission("randomspawntp.teleport")) {
-            Utils.sendMessage(sender, "no-perms");
-            return;
-        }
-        if(!cooldownTimer(sender)){
-            Utils.sendMessage(sender, ImmutableMap.of("%time-left%", String.valueOf((main.getConfig().getLong("cooldown.time") - (System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId())))/1000)), "cooldown-active");
-            return;
-        }
-        // Teleport player to random world
-        List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
-        Random randomNumber = new Random();
-        String world = keys.get(randomNumber.nextInt(0,keys.size()));
+	private void executeTeleport(CommandSender sender) {
+		// Check if command sender is a player
+		if (!(sender instanceof Player)) {
+			Utils.sendMessage(sender, "player-only");
+			return;
+		}
+		// Check permissions
+		if (!sender.hasPermission("randomspawntp.teleport")) {
+			Utils.sendMessage(sender, "no-perms");
+			return;
+		}
+		if (!cooldownTimer(sender)) {
+			Utils.sendMessage(sender, ImmutableMap.of("%time-left%", String.valueOf((main.getConfig().getLong("cooldown.time") - (System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId()))) / 1000)), "cooldown-active");
+			return;
+		}
+		// Teleport player to random world
+		List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
+		Random randomNumber = new Random();
+		String world = keys.get(randomNumber.nextInt(0, keys.size()));
 
-        if (Bukkit.getWorld(world) != null) {
-            Bukkit.createWorld(new WorldCreator(world));
-            ((Player) sender).teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
-        } else {
-            Utils.sendMessage(sender, "world-nonexistent");
-        }
+		if (Bukkit.getWorld(world) != null) {
+			Bukkit.createWorld(new WorldCreator(world));
+			((Player) sender).teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
+		} else {
+			Utils.sendMessage(sender, "world-nonexistent");
+		}
 
-    }
+	}
 
-    private boolean cooldownTimer(CommandSender sender) {
-        if(!main.getConfig().getBoolean("cooldown.enabled") || !this.cooldown.containsKey(((Player) sender).getUniqueId()) || System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId()) >= main.getConfig().getLong("cooldown.time") || sender.hasPermission("randomspawntp.cooldown.bypass")) {
-            this.cooldown.put(((Player) sender).getUniqueId(),System.currentTimeMillis());
-            return true;
-        }
-        return false;
-    }
+	private boolean cooldownTimer(CommandSender sender) {
+		if (!main.getConfig().getBoolean("cooldown.enabled") || !this.cooldown.containsKey(((Player) sender).getUniqueId()) || System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId()) >= main.getConfig().getLong("cooldown.time") || sender.hasPermission("randomspawntp.cooldown.bypass")) {
+			this.cooldown.put(((Player) sender).getUniqueId(), System.currentTimeMillis());
+			return true;
+		}
+		return false;
+	}
 }

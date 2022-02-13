@@ -26,33 +26,33 @@ import java.util.Objects;
 
 public final class RandomSpawnTp extends JavaPlugin {
 
-    private Messages messages;
+	private Messages messages;
 
-    @Override
-    public void onEnable() {
+	@Override
+	public void onEnable() {
 
-        Objects.requireNonNull(getCommand("randomspawntp")).setExecutor(new RandomSpawnTpCmd());
+		Objects.requireNonNull(getCommand("randomspawntp")).setExecutor(new RandomSpawnTpCmd());
 
-        saveDefaultConfig();
+		saveDefaultConfig();
 
-        messages = new Messages();
+		messages = new Messages();
 
-        Bukkit.getLogger().info("RandomSpawnTp v" + this.getDescription().getVersion() + " enabled");
-        Bukkit.getLogger().info("Copyright (C) 2022 Leopold Meinel");
-        Bukkit.getLogger().info("This program comes with ABSOLUTELY NO WARRANTY!");
-        Bukkit.getLogger().info("This is free software, and you are welcome to redistribute it under certain conditions.");
-        Bukkit.getLogger().info("See https://github.com/TamrielNetwork/RandomSpawnTp/blob/main/LICENSE for more details.");
-    }
+		Bukkit.getLogger().info("RandomSpawnTp v" + this.getDescription().getVersion() + " enabled");
+		Bukkit.getLogger().info("Copyright (C) 2022 Leopold Meinel");
+		Bukkit.getLogger().info("This program comes with ABSOLUTELY NO WARRANTY!");
+		Bukkit.getLogger().info("This is free software, and you are welcome to redistribute it under certain conditions.");
+		Bukkit.getLogger().info("See https://github.com/TamrielNetwork/RandomSpawnTp/blob/main/LICENSE for more details.");
+	}
 
-    @Override
-    public void onDisable() {
+	@Override
+	public void onDisable() {
 
-        Bukkit.getLogger().info("RandomSpawnTp v" + this.getDescription().getVersion() + " disabled");
-    }
+		Bukkit.getLogger().info("RandomSpawnTp v" + this.getDescription().getVersion() + " disabled");
+	}
 
-    public Messages getMessages() {
-        return messages;
-    }
+	public Messages getMessages() {
+		return messages;
+	}
 
 }
 
