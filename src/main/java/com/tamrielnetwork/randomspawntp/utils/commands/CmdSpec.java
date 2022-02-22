@@ -72,11 +72,11 @@ public class CmdSpec {
 		boolean isOnCooldown = main.getConfig().getBoolean("cooldown.enabled") && !senderPlayer.hasPermission("randomspawntp.cooldown.bypass") && cooldownMap.containsKey(senderPlayer.getUniqueId());
 
 		if (isOnCooldown) {
-			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis()/1000);
+			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
 			Chat.sendMessage(sender, ImmutableMap.of("%time-left%", timeRemaining), "cooldown-active");
 			return true;
 		}
-		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis()/1000);
+		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
 		doTiming(sender);
 		return false;
 	}
