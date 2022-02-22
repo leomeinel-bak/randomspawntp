@@ -18,72 +18,46 @@
 
 package com.tamrielnetwork.randomspawntp.commands;
 
-import com.google.common.collect.ImmutableMap;
-import com.tamrielnetwork.randomspawntp.RandomSpawnTp;
-import com.tamrielnetwork.randomspawntp.utils.Utils;
+import com.tamrielnetwork.randomspawntp.utils.Chat;
+import com.tamrielnetwork.randomspawntp.utils.commands.Cmd;
+import com.tamrielnetwork.randomspawntp.utils.commands.CmdSpec;
 import org.bukkit.Bukkit;
 import org.bukkit.WorldCreator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 public class RandomSpawnTpCmd implements CommandExecutor {
 
-	private final RandomSpawnTp main = JavaPlugin.getPlugin(RandomSpawnTp.class);
-
-	private final HashMap<UUID, Long> cooldown = new HashMap<>();
-
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-		// Check args length
-		if (args.length == 0) {
-			executeTeleport(sender);
-		} else {
-			Utils.sendMessage(sender, "invalid-option");
-		}
 
+		if (Cmd.isArgsLengthNotEqualTo(sender, args, 0)) {
+			return true;
+		}
+		doRandomSpawnTp(sender);
 		return true;
 	}
 
-	private void executeTeleport(CommandSender sender) {
-		// Check if command sender is a player
-		if (!(sender instanceof Player)) {
-			Utils.sendMessage(sender, "player-only");
+	private void doRandomSpawnTp(@NotNull CommandSender sender) {
+		Player senderPlayer = (Player) sender;
+		String world = CmdSpec.getWorld();
+
+		if (CmdSpec.isInvalidCmd(sender, "randomspawntp.teleport")) {
 			return;
 		}
-		// Check permissions
-		if (!sender.hasPermission("randomspawntp.teleport")) {
-			Utils.sendMessage(sender, "no-perms");
+
+		if (Bukkit.getWorld(world) == null) {
+			Chat.sendMessage(sender, "world-nonexistent");
 			return;
 		}
-		if (!cooldownTimer(sender)) {
-			Utils.sendMessage(sender, ImmutableMap.of("%time-left%", String.valueOf((main.getConfig().getLong("cooldown.time") - (System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId()))) / 1000)), "cooldown-active");
-			return;
-		}
-		// Teleport player to random world
-		List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
-		Random randomNumber = new Random();
-		String world = keys.get(randomNumber.nextInt(0, keys.size()));
 
-		if (Bukkit.getWorld(world) != null) {
-			Bukkit.createWorld(new WorldCreator(world));
-			((Player) sender).teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
-		} else {
-			Utils.sendMessage(sender, "world-nonexistent");
-		}
+		Bukkit.createWorld(new WorldCreator(world));
+		senderPlayer.teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
 
-	}
-
-	private boolean cooldownTimer(CommandSender sender) {
-		if (!main.getConfig().getBoolean("cooldown.enabled") || !this.cooldown.containsKey(((Player) sender).getUniqueId()) || System.currentTimeMillis() - cooldown.get(((Player) sender).getUniqueId()) >= main.getConfig().getLong("cooldown.time") || sender.hasPermission("randomspawntp.cooldown.bypass")) {
-			this.cooldown.put(((Player) sender).getUniqueId(), System.currentTimeMillis());
-			return true;
-		}
-		return false;
 	}
 }

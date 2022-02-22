@@ -5,4 +5,4 @@ worlds:
 cooldown:
   enabled: true
   # time in ms
-  time: 300000
+  time: 300
