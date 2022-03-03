@@ -4,5 +4,5 @@ worlds:
 # Command cool-down
 cooldown:
   enabled: true
-  # time in ms
+  # time in s
   time: 300

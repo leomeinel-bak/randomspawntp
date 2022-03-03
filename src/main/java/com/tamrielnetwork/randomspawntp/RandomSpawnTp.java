@@ -32,7 +32,7 @@ public final class RandomSpawnTp extends JavaPlugin {
 	@Override
 	public void onEnable() {
 
-		Objects.requireNonNull(getCommand("randomspawntp")).setExecutor(new RandomSpawnTpCmd());
+		Objects.requireNonNull(getCommand("rstp")).setExecutor(new RandomSpawnTpCmd());
 
 		saveDefaultConfig();
 

@@ -45,14 +45,14 @@ public class RandomSpawnTpCmd implements CommandExecutor {
 
 	private void doRandomSpawnTp(@NotNull CommandSender sender) {
 
-		if (CmdSpec.isInvalidCmd(sender, "randomspawntp.teleport")) {
+		if (CmdSpec.isInvalidCmd(sender, "randomspawntp.rstp")) {
 			return;
 		}
 		Player senderPlayer = (Player) sender;
 		String world = CmdSpec.getWorld();
 
 		if (Bukkit.getWorld(world) == null) {
-			Chat.sendMessage(sender, "world-nonexistent");
+			Chat.sendMessage(sender, "invalid-world");
 			return;
 		}
 

@@ -85,9 +85,9 @@ To get the plugin running on your server follow these simple steps.
 
 ### Commands and Permissions
 
-1. Permission: `randomspawntp.teleport`
+1. Permission: `randomspawntp.rstp`
 
-* Command: `/randomspawntp`
+* Command: `/rstp`
 * Description: Teleport to a random world spawn
 
 ### Configuration - config.yml

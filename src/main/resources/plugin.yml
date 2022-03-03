@@ -6,13 +6,13 @@ authors: [ Tamriel Network ]
 website: https://tamriel.site
 description: Teleports you to a random world spawn.
 commands:
-  randomspawntp:
+  rstp:
     description: "Main command"
-    usage: "/randomspawntp"
+    usage: "/rstp"
 permissions:
-  randomspawntp.teleport:
+  randomspawntp.rstp:
     description: "Permission to teleport"
     default: op
   randomspawntp.cooldown.bypass:
-    description: "Permission to bypass teleport cooldown"
+    description: "Permission to bypass cooldown"
     default: op
