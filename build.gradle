@@ -3,7 +3,6 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id 'java'
-    id "org.sonarqube" version "3.3"
 }
 
 group 'com.tamrielnetwork.randomspawntp'
@@ -26,6 +25,10 @@ processResources {
         duplicatesStrategy = 'INCLUDE'
         filter ReplaceTokens, tokens: [version: version]
     }
+}
+
+plugins {
+    id "org.sonarqube" version "3.3"
 }
 
 sonarqube {
