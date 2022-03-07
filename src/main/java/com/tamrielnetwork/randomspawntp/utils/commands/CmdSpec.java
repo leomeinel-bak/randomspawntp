@@ -21,12 +21,15 @@ package com.tamrielnetwork.randomspawntp.utils.commands;
 import com.google.common.collect.ImmutableMap;
 import com.tamrielnetwork.randomspawntp.RandomSpawnTp;
 import com.tamrielnetwork.randomspawntp.utils.Chat;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,13 +39,22 @@ import java.util.UUID;
 
 public class CmdSpec {
 
+	private static final String NOSUCHALGORITHMEXCEPTION = "RandomSpawnTp encountered a NoSuchAlgorithmException while executing task";
 	private static final RandomSpawnTp main = JavaPlugin.getPlugin(RandomSpawnTp.class);
 	private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
+	private static Random randomNumber = null;
+
+	static {
+		try {
+			randomNumber = SecureRandom.getInstanceStrong();
+		} catch (NoSuchAlgorithmException e) {
+			Bukkit.getLogger().warning(NOSUCHALGORITHMEXCEPTION);
+		}
+	}
 
 	public static String getWorld() {
 
 		List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
-		Random randomNumber = new Random();
 		return keys.get(randomNumber.nextInt(0, keys.size()));
 	}
 
