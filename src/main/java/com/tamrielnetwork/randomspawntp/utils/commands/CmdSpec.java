@@ -18,7 +18,6 @@
 
 package com.tamrielnetwork.randomspawntp.utils.commands;
 
-import com.google.common.collect.ImmutableMap;
 import com.tamrielnetwork.randomspawntp.RandomSpawnTp;
 import com.tamrielnetwork.randomspawntp.utils.Chat;
 import org.bukkit.Bukkit;
@@ -50,6 +49,11 @@ public class CmdSpec {
 		} catch (NoSuchAlgorithmException e) {
 			Bukkit.getLogger().warning(NOSUCHALGORITHMEXCEPTION);
 		}
+	}
+
+	private CmdSpec() {
+
+		throw new IllegalStateException("Utility class");
 	}
 
 	public static String getWorld() {
@@ -96,7 +100,7 @@ public class CmdSpec {
 
 		if (isOnCooldown) {
 			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
-			Chat.sendMessage(sender, ImmutableMap.of("%time-left%", timeRemaining), "cooldown-active");
+			Chat.sendMessage(sender, java.util.Map.of("%time-left%", timeRemaining), "cooldown-active");
 			return true;
 		}
 		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
