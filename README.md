@@ -45,7 +45,8 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#commands-and-permissions">Commands and Permissions</a></li>
-        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#configuration - config.yml">Configuration</a></li>
+		<li><a href="#configuration - messages.yml">Configuration</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -90,27 +91,32 @@ To get the plugin running on your server follow these simple steps.
 * Command: `/rstp`
 * Description: Teleport to a random world spawn
 
+2. Permission: `randomspawntp.cooldown.bypass`
+
+* Description: Bypass cooldown
+
 ### Configuration - config.yml
 
 ```
-worlds:
-  - world_example_0
-  - world_example_1
 # Command cool-down
 cooldown:
   enabled: true
-  # time in ms
-  time: 300000
+  # time in s
+  time: 300
+
+worlds:
+  - world_example_0
+  - world_example_1
 ```
 
 ### Configuration - messages.yml
 
 ```
+cmd: "&fUsage: &b/randomspawntp"
+invalid-world: "&cInvalid world provided in config.yml!"
+no-perms: "&cYou don't have enough permissions!"
 player-only: "&cThis command can only be executed by players!"
-invalid-option: "&cInvalid option!"
-world-nonexistent: "&cInvalid world provided in config.yml"
-no-perms: "&7You don't have enough permissions!"
-cooldown-active: "&7You can't use that command for another &b%time-left% &7seconds!"
+cooldown-active: "&cYou can't use that command for another &b%time-left% &cseconds!"
 ```
 
 <!-- ROADMAP -->

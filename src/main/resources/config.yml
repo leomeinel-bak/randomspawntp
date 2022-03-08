@@ -1,8 +1,9 @@
-worlds:
-  - world_example_0
-  - world_example_1
 # Command cool-down
 cooldown:
   enabled: true
   # time in s
   time: 300
+
+worlds:
+  - world_example_0
+  - world_example_1
