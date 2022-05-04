@@ -2,8 +2,7 @@ name: RandomSpawnTp
 version: @version@
 main: com.tamrielnetwork.randomspawntp.RandomSpawnTp
 api-version: 1.17
-authors: [ Tamriel Network ]
-website: https://tamriel.site
+authors: [ Leopold Meinel ]
 description: Teleports you to a random world spawn.
 commands:
   rstp:
