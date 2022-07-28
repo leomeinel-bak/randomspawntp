@@ -16,9 +16,9 @@
  * along with this program. If not, see https://github.com/LeoMeinel/RandomSpawnTp/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.randomspawntp.files;
+package dev.meinel.leo.randomspawntp.files;
 
-import com.tamrielnetwork.randomspawntp.RandomSpawnTp;
+import dev.meinel.leo.randomspawntp.RandomSpawnTp;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

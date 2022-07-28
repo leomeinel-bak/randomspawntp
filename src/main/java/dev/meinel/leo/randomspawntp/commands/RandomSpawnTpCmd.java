@@ -16,11 +16,11 @@
  * along with this program. If not, see https://github.com/LeoMeinel/RandomSpawnTp/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.randomspawntp.commands;
+package dev.meinel.leo.randomspawntp.commands;
 
-import com.tamrielnetwork.randomspawntp.utils.Chat;
-import com.tamrielnetwork.randomspawntp.utils.commands.Cmd;
-import com.tamrielnetwork.randomspawntp.utils.commands.CmdSpec;
+import dev.meinel.leo.randomspawntp.utils.Chat;
+import dev.meinel.leo.randomspawntp.utils.commands.Cmd;
+import dev.meinel.leo.randomspawntp.utils.commands.CmdSpec;
 import org.bukkit.Bukkit;
 import org.bukkit.WorldCreator;
 import org.bukkit.command.Command;

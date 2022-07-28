@@ -1,6 +1,6 @@
 name: RandomSpawnTp
 version: @version@
-main: com.tamrielnetwork.randomspawntp.RandomSpawnTp
+main: dev.meinel.leo.randomspawntp.RandomSpawnTp
 api-version: 1.17
 authors: [ Leopold Meinel ]
 description: Teleports you to a random world spawn.
