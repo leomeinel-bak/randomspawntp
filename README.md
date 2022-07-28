@@ -10,7 +10,7 @@
 <!--suppress ALL -->
 <br />
 <p align="center">
-  <a href="https://github.com/TamrielNetwork/RandomSpawnTp">
+  <a href="https://github.com/LeoMeinel/RandomSpawnTp">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,14 +19,14 @@
   <p align="center">
     Spectate Players on Spigot and Paper
     <br />
-    <a href="https://github.com/TamrielNetwork/RandomSpawnTp"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/LeoMeinel/RandomSpawnTp"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/TamrielNetwork/RandomSpawnTp">View Demo</a>
+    <a href="https://github.com/LeoMeinel/RandomSpawnTp">View Demo</a>
     ·
-    <a href="https://github.com/TamrielNetwork/RandomSpawnTp/issues">Report Bug</a>
+    <a href="https://github.com/LeoMeinel/RandomSpawnTp/issues">Report Bug</a>
     ·
-    <a href="https://github.com/TamrielNetwork/RandomSpawnTp/issues">Request Feature</a>
+    <a href="https://github.com/LeoMeinel/RandomSpawnTp/issues">Request Feature</a>
   </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -123,7 +123,7 @@ cooldown-active: "&cYou can't use that command for another &b%time-left% &csecon
 
 ## Roadmap
 
-See the [open issues](https://github.com/TamrielNetwork/RandomSpawnTp/issues) for a list of proposed features (and known
+See the [open issues](https://github.com/LeoMeinel/RandomSpawnTp/issues) for a list of proposed features (and known
 issues).
 
 <!-- CONTRIBUTING -->
@@ -153,7 +153,7 @@ Leopold Meinel - [@TamrielN](https://twitter.com/TamrielN) - Twitter
 
 Leopold Meinel - [contact@tamriel.me](mailto:contact@tamriel.me) - eMail
 
-Project Link - [RandomSpawnTp](https://github.com/TamrielNetwork/RandomSpawnTp) - GitHub
+Project Link - [RandomSpawnTp](https://github.com/LeoMeinel/RandomSpawnTp) - GitHub
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -163,26 +163,26 @@ Project Link - [RandomSpawnTp](https://github.com/TamrielNetwork/RandomSpawnTp) 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors-anon/TamrielNetwork/RandomSpawnTp?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/RandomSpawnTp?style=for-the-badge
 
-[contributors-url]: https://github.com/TamrielNetwork/RandomSpawnTp/graphs/contributors
+[contributors-url]: https://github.com/LeoMeinel/RandomSpawnTp/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/TamrielNetwork/RandomSpawnTp?label=Forks&style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/RandomSpawnTp?label=Forks&style=for-the-badge
 
-[forks-url]: https://github.com/TamrielNetwork/RandomSpawnTp/network/members
+[forks-url]: https://github.com/LeoMeinel/RandomSpawnTp/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/TamrielNetwork/RandomSpawnTp?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/RandomSpawnTp?style=for-the-badge
 
-[stars-url]: https://github.com/TamrielNetwork/RandomSpawnTp/stargazers
+[stars-url]: https://github.com/LeoMeinel/RandomSpawnTp/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/TamrielNetwork/RandomSpawnTp?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/RandomSpawnTp?style=for-the-badge
 
-[issues-url]: https://github.com/TamrielNetwork/RandomSpawnTp/issues
+[issues-url]: https://github.com/LeoMeinel/RandomSpawnTp/issues
 
-[license-shield]: https://img.shields.io/github/license/TamrielNetwork/RandomSpawnTp?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/LeoMeinel/RandomSpawnTp?style=for-the-badge
 
-[license-url]: https://github.com/TamrielNetwork/RandomSpawnTp/blob/main/LICENSE
+[license-url]: https://github.com/LeoMeinel/RandomSpawnTp/blob/main/LICENSE
 
-[quality-shield]: https://img.shields.io/codefactor/grade/github/TamrielNetwork/RandomSpawnTp?style=for-the-badge
+[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/RandomSpawnTp?style=for-the-badge
 
-[quality-url]: https://www.codefactor.io/repository/github/TamrielNetwork/RandomSpawnTp
+[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/RandomSpawnTp
