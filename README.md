@@ -1,4 +1,5 @@
 <!-- PROJECT SHIELDS -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -69,14 +70,14 @@ This plugin is perfect for any server wanting their players to teleport to rando
 
 ### Features
 
-* Teleport players to a random world spawn
-* Configure a list of worlds to be included
-* Configure a cool-down for the teleport command to be executed
+- Teleport players to a random world spawn
+- Configure a list of worlds to be included
+- Configure a cool-down for the teleport command to be executed
 
 ### Built With
 
-* [Gradle 7](https://docs.gradle.org/7.4/release-notes.html)
-* [OpenJDK 17](https://openjdk.java.net/projects/jdk/17/)
+- [Gradle 7](https://docs.gradle.org/7.4/release-notes.html)
+- [OpenJDK 17](https://openjdk.java.net/projects/jdk/17/)
 
 <!-- GETTING STARTED -->
 
@@ -88,12 +89,12 @@ To get the plugin running on your server follow these simple steps.
 
 1. Permission: `randomspawntp.rstp`
 
-* Command: `/rstp`
-* Description: Teleport to a random world spawn
+- Command: `/rstp`
+- Description: Teleport to a random world spawn
 
 2. Permission: `randomspawntp.cooldown.bypass`
 
-* Description: Bypass cooldown
+- Description: Bypass cooldown
 
 ### Configuration - config.yml
 
@@ -157,30 +158,19 @@ Project Link - [RandomSpawnTp](https://github.com/LeoMeinel/RandomSpawnTp) - Git
 
 ### Acknowledgements
 
-* [README.md - othneildrew](https://github.com/othneildrew/Best-README-Template)
+- [README.md - othneildrew](https://github.com/othneildrew/Best-README-Template)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/RandomSpawnTp?style=for-the-badge
-
 [contributors-url]: https://github.com/LeoMeinel/RandomSpawnTp/graphs/contributors
-
 [forks-shield]: https://img.shields.io/github/forks/LeoMeinel/RandomSpawnTp?label=Forks&style=for-the-badge
-
 [forks-url]: https://github.com/LeoMeinel/RandomSpawnTp/network/members
-
 [stars-shield]: https://img.shields.io/github/stars/LeoMeinel/RandomSpawnTp?style=for-the-badge
-
 [stars-url]: https://github.com/LeoMeinel/RandomSpawnTp/stargazers
-
 [issues-shield]: https://img.shields.io/github/issues/LeoMeinel/RandomSpawnTp?style=for-the-badge
-
 [issues-url]: https://github.com/LeoMeinel/RandomSpawnTp/issues
-
 [license-shield]: https://img.shields.io/github/license/LeoMeinel/RandomSpawnTp?style=for-the-badge
-
 [license-url]: https://github.com/LeoMeinel/RandomSpawnTp/blob/main/LICENSE
-
 [quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/RandomSpawnTp?style=for-the-badge
-
 [quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/RandomSpawnTp
