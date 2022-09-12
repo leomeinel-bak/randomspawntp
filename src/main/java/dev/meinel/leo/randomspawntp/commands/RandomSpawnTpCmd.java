@@ -24,30 +24,30 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class RandomSpawnTpCmd
-		implements CommandExecutor {
+        implements CommandExecutor {
 
-	@Override
-	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
-			@NotNull String[] args) {
-		if (Cmd.isArgsLengthNotEqualTo(sender, args, 0)) {
-			return false;
-		}
-		doRandomSpawnTp(sender);
-		return true;
-	}
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
+            @NotNull String[] args) {
+        if (Cmd.isArgsLengthNotEqualTo(sender, args, 0)) {
+            return false;
+        }
+        doRandomSpawnTp(sender);
+        return true;
+    }
 
-	private void doRandomSpawnTp(@NotNull CommandSender sender) {
-		if (CmdSpec.isInvalidCmd(sender, "randomspawntp.rstp")) {
-			return;
-		}
-		Player senderPlayer = (Player) sender;
-		String world = CmdSpec.getWorld();
-		if (Bukkit.getWorld(world) == null) {
-			Chat.sendMessage(sender, "invalid-world");
-			return;
-		}
-		Bukkit.createWorld(new WorldCreator(world));
-		senderPlayer.teleport(Objects.requireNonNull(Bukkit.getWorld(world))
-				.getSpawnLocation());
-	}
+    private void doRandomSpawnTp(@NotNull CommandSender sender) {
+        if (CmdSpec.isInvalidCmd(sender, "randomspawntp.rstp")) {
+            return;
+        }
+        Player senderPlayer = (Player) sender;
+        String world = CmdSpec.getWorld();
+        if (Bukkit.getWorld(world) == null) {
+            Chat.sendMessage(sender, "invalid-world");
+            return;
+        }
+        Bukkit.createWorld(new WorldCreator(world));
+        senderPlayer.teleport(Objects.requireNonNull(Bukkit.getWorld(world))
+                .getSpawnLocation());
+    }
 }
