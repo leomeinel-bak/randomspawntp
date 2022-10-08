@@ -11,7 +11,7 @@
 <!--suppress ALL -->
 <br />
 <p align="center">
-  <a href="https://github.com/LeoMeinel/RandomSpawnTp">
+  <a href="https://github.com/LeoMeinel/randomspawntp">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     Spectate Players on Spigot and Paper
     <br />
-    <a href="https://github.com/LeoMeinel/RandomSpawnTp"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/LeoMeinel/randomspawntp"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/LeoMeinel/RandomSpawnTp">View Demo</a>
+    <a href="https://github.com/LeoMeinel/randomspawntp">View Demo</a>
     ·
-    <a href="https://github.com/LeoMeinel/RandomSpawnTp/issues">Report Bug</a>
+    <a href="https://github.com/LeoMeinel/randomspawntp/issues">Report Bug</a>
     ·
-    <a href="https://github.com/LeoMeinel/RandomSpawnTp/issues">Request Feature</a>
+    <a href="https://github.com/LeoMeinel/randomspawntp/issues">Request Feature</a>
   </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -85,7 +85,7 @@ worlds:
 ### Configuration - messages.yml
 
 ```yaml
-cmd: "&fUsage: &b/randomspawntp"
+cmd: "&fUsage: &b/rstp"
 invalid-world: "&cInvalid world provided in config.yml!"
 no-perms: "&cYou don't have enough permissions!"
 player-only: "&cThis command can only be executed by players!"
@@ -96,7 +96,7 @@ cooldown-active: "&cYou can't use that command for another &b%time-left% &csecon
 
 ## Roadmap
 
-See the [open issues](https://github.com/LeoMeinel/RandomSpawnTp/issues) for a list of proposed features (and known
+See the [open issues](https://github.com/LeoMeinel/randomspawntp/issues) for a list of proposed features (and known
 issues).
 
 <!-- CONTRIBUTING -->
@@ -124,7 +124,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 
 Leopold Meinel - [leo@meinel.dev](mailto:leo@meinel.dev) - eMail
 
-Project Link - [RandomSpawnTp](https://github.com/LeoMeinel/RandomSpawnTp) - GitHub
+Project Link - [RandomSpawnTp](https://github.com/LeoMeinel/randomspawntp) - GitHub
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -134,15 +134,15 @@ Project Link - [RandomSpawnTp](https://github.com/LeoMeinel/RandomSpawnTp) - Git
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/RandomSpawnTp?style=for-the-badge
-[contributors-url]: https://github.com/LeoMeinel/RandomSpawnTp/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/RandomSpawnTp?label=Forks&style=for-the-badge
-[forks-url]: https://github.com/LeoMeinel/RandomSpawnTp/network/members
-[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/RandomSpawnTp?style=for-the-badge
-[stars-url]: https://github.com/LeoMeinel/RandomSpawnTp/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/RandomSpawnTp?style=for-the-badge
-[issues-url]: https://github.com/LeoMeinel/RandomSpawnTp/issues
-[license-shield]: https://img.shields.io/github/license/LeoMeinel/RandomSpawnTp?style=for-the-badge
-[license-url]: https://github.com/LeoMeinel/RandomSpawnTp/blob/main/LICENSE
-[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/RandomSpawnTp?style=for-the-badge
-[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/RandomSpawnTp
+[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/randomspawntp?style=for-the-badge
+[contributors-url]: https://github.com/LeoMeinel/randomspawntp/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/randomspawntp?label=Forks&style=for-the-badge
+[forks-url]: https://github.com/LeoMeinel/randomspawntp/network/members
+[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/randomspawntp?style=for-the-badge
+[stars-url]: https://github.com/LeoMeinel/randomspawntp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/randomspawntp?style=for-the-badge
+[issues-url]: https://github.com/LeoMeinel/randomspawntp/issues
+[license-shield]: https://img.shields.io/github/license/LeoMeinel/randomspawntp?style=for-the-badge
+[license-url]: https://github.com/LeoMeinel/randomspawntp/blob/main/LICENSE
+[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/randomspawntp?style=for-the-badge
+[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/randomspawntp
