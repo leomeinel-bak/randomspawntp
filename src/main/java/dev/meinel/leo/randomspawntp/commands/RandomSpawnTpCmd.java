@@ -2,7 +2,7 @@
  * File: RandomSpawnTpCmd.java
  * Author: Leopold Meinel (leo@meinel.dev)
  * -----
- * Copyright (c) 2022 Leopold Meinel & contributors
+ * Copyright (c) 2023 Leopold Meinel & contributors
  * SPDX ID: GPL-3.0-or-later
  * URL: https://www.gnu.org/licenses/gpl-3.0-standalone.html
  * -----
@@ -23,12 +23,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class RandomSpawnTpCmd
-        implements CommandExecutor {
+public class RandomSpawnTpCmd implements CommandExecutor {
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
-            @NotNull String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command,
+            @NotNull String label, @NotNull String[] args) {
         if (Cmd.isArgsLengthNotEqualTo(sender, args, 0)) {
             return false;
         }
@@ -47,7 +46,6 @@ public class RandomSpawnTpCmd
             return;
         }
         Bukkit.createWorld(new WorldCreator(world));
-        senderPlayer.teleport(Objects.requireNonNull(Bukkit.getWorld(world))
-                .getSpawnLocation());
+        senderPlayer.teleport(Objects.requireNonNull(Bukkit.getWorld(world)).getSpawnLocation());
     }
 }

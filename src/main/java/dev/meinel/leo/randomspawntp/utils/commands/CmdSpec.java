@@ -2,7 +2,7 @@
  * File: CmdSpec.java
  * Author: Leopold Meinel (leo@meinel.dev)
  * -----
- * Copyright (c) 2022 Leopold Meinel & contributors
+ * Copyright (c) 2023 Leopold Meinel & contributors
  * SPDX ID: GPL-3.0-or-later
  * URL: https://www.gnu.org/licenses/gpl-3.0-standalone.html
  * -----
@@ -31,7 +31,8 @@ import java.util.UUID;
 
 public class CmdSpec {
 
-    private static final String NOSUCHALGORITHMEXCEPTION = "RandomSpawnTp encountered a NoSuchAlgorithmException while executing task";
+    private static final String NOSUCHALGORITHMEXCEPTION =
+            "RandomSpawnTp encountered a NoSuchAlgorithmException while executing task";
     private static final RandomSpawnTp main = JavaPlugin.getPlugin(RandomSpawnTp.class);
     private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
     private static Random randomNumber = null;
@@ -40,8 +41,7 @@ public class CmdSpec {
         try {
             randomNumber = SecureRandom.getInstanceStrong();
         } catch (NoSuchAlgorithmException e) {
-            Bukkit.getLogger()
-                    .warning(NOSUCHALGORITHMEXCEPTION);
+            Bukkit.getLogger().warning(NOSUCHALGORITHMEXCEPTION);
         }
     }
 
@@ -50,13 +50,14 @@ public class CmdSpec {
     }
 
     public static String getWorld() {
-        List<String> keys = new ArrayList<>(Objects.requireNonNull(main.getConfig()
-                .getStringList("worlds")));
+        List<String> keys =
+                new ArrayList<>(Objects.requireNonNull(main.getConfig().getStringList("worlds")));
         return keys.get(randomNumber.nextInt(0, keys.size()));
     }
 
     public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
-        return Cmd.isInvalidSender(sender) || Cmd.isNotPermitted(sender, perm) || isOnCooldown(sender);
+        return Cmd.isInvalidSender(sender) || Cmd.isNotPermitted(sender, perm)
+                || isOnCooldown(sender);
     }
 
     private static void clearMap(@NotNull CommandSender sender) {
@@ -71,25 +72,22 @@ public class CmdSpec {
             public void run() {
                 clearMap(sender);
             }
-        }.runTaskLaterAsynchronously(main, (main.getConfig()
-                .getLong("cooldown.time") * 20L));
+        }.runTaskLaterAsynchronously(main, (main.getConfig().getLong("cooldown.time") * 20L));
     }
 
     private static boolean isOnCooldown(@NotNull CommandSender sender) {
         Player senderPlayer = (Player) sender;
-        boolean isOnCooldown = main.getConfig()
-                .getBoolean("cooldown.enabled")
-                && !sender.hasPermission(
-                        "randomspawntp.cooldown.bypass")
+        boolean isOnCooldown = main.getConfig().getBoolean("cooldown.enabled")
+                && !sender.hasPermission("randomspawntp.cooldown.bypass")
                 && cooldownMap.containsKey(senderPlayer.getUniqueId());
         if (isOnCooldown) {
-            String timeRemaining = String.valueOf(
-                    cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
+            String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId())
+                    - System.currentTimeMillis() / 1000);
             Chat.sendMessage(sender, Map.of("%time-left%", timeRemaining), "cooldown-active");
             return true;
         }
-        cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig()
-                .getLong("cooldown.time") + System.currentTimeMillis() / 1000);
+        cooldownMap.put(senderPlayer.getUniqueId(),
+                main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
         doTiming(sender);
         return false;
     }
