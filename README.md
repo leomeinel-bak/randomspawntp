@@ -85,7 +85,6 @@ worlds:
 ### Configuration - messages.yml
 
 ```yaml
-cmd: "&fUsage: &b/rstp"
 invalid-world: "&cInvalid world provided in config.yml!"
 no-perms: "&cYou don't have enough permissions!"
 player-only: "&cThis command can only be executed by players!"
